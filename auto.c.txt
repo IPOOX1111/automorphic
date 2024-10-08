@@ -1,0 +1,32 @@
+#include <stdio.h>
+#include <math.h>
+#include <stdbool.h> 
+int count(int nbr){
+int cpt=0;
+    while (nbr/10!=0) {
+        cpt++; 
+  nbr = nbr/10;}
+    return cpt;
+}
+bool Auto(int nbr){
+
+ int A=(int)pow(10,count(nbr)) ;
+  int  y=(int)pow(nbr,2);
+    if (y%A==nbr) {
+        return true;
+    } else { return false;
+        
+    }
+}
+int main() {
+    int nbr;
+    printf("give the nbr\n");
+    scanf("%d",&nbr);
+    if (Auto(nbr)) {
+        printf("The number %d is an automorphic number.\n",nbr );
+    } else {
+        printf("The number %d is not an automorphic number.\n",nbr);
+    }
+
+    return 0;
+}
